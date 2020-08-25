@@ -48,57 +48,33 @@
 
 
 		}
-		else if($_POST['Submit']==='Save Changes to Student Details'){
-			$id = $_GET['id'];
+		else if($_POST['Submit']==='Save Changes Employee Details'){
+			
 			$sid = $_POST['sid'];
-			$lname =$_POST['lname'];
-			$fname =$_POST['fname'];
-			$mname =$_POST['mname'];
-			$ylevel =$_POST['ylevel'];
-			$madd =$_POST['madd'];
-			if ($madd == ''){
-			$result = $con->query("UPDATE `student_info` SET 
-				`Student_ID` = \"$sid\",  
-				`Student_LName` = \"$lname\", 
-				`Student_FName` = \"$fname\", 
-				`Student_MName` = \"$mname\",
-				`Student_YearLevel` = \"$ylevel\", 
-				`MacAddress` = Null
-				where `Student_ID` = \"$id\"");
+			$lname =$_POST['name'];
+			$fname =$_POST['salary'];
+			$mname =$_POST['phone'];
+			$ylevel =$_POST['dept_no'];
+
+
+			$result = $con->query("UPDATE `employees` SET 
+				`sid` = \"$sid\",  
+				`name` = \"$lname\", 
+				`salary` = \"$fname\", 
+				`phone = \"$mname\",
+				`dept_no` = \"$ylevel\"
+				where sid = \"$id\"");
 				
-				echo "UPDATE `student_info` SET 
-				`Student_ID` = \"$sid\",  
-				`Student_LName` = \"$lname\", 
-				`Student_FName` = \"$fname\", 
-				`Student_MName` = \"$mname\",
-				`Student_YearLevel` = \"$ylevel\", 
-				`MacAddress`) = Null
-				where `Student_ID` = \"$id\"";
+				echo "UPDATE `employees` SET 
+				`sid` = \"$sid\",  
+				`name` = \"$lname\", 
+				`salary` = \"$fname\", 
+				`phone = \"$mname\",
+				`dept_no` = \"$ylevel\"
+				where sid = \"$id\"";
 			
 			if (!$result) {
 			die('Invalid query: ' . mysqli_error());
-			}
-		}else{
-			$result = $con->query("UPDATE `student_info` SET 
-				`Student_ID` = \"$sid\",  
-				`Student_LName` = \"$lname\", 
-				`Student_FName` = \"$fname\", 
-				`Student_MName` = \"$mname\",
-				`Student_YearLevel` = \"$ylevel\", 
-				`MacAddress` = \"$madd\"
-				where `Student_ID` = \"$id\"");
-				
-				echo "UPDATE `student_info` SET 
-				`Student_ID` = \"$sid\",  
-				`Student_LName` = \"$lname\", 
-				`Student_FName` = \"$fname\", 
-				`Student_MName` = \"$mname\",
-				`Student_YearLevel` = \"$ylevel\", 
-				`MacAddress`) = \"$madd\"
-				where `Student_ID` = \"$id\"";
-			
-			if (!$result) {
-			//die('Invalid query: ' . mysqli_error());
 			}
 		}
 		}
@@ -125,7 +101,7 @@
 			die('Invalid query: ' . mysqli_error());
 			}
 		}
-	}
+	
 
 	if(isset($_GET['action'])){
 
@@ -152,11 +128,15 @@
 			// die('Invalid query: ' . mysqli_error());
 			// }
 		}
+
+
 		else if($_GET['action']==='del'){
 			echo "action";
 			echo $id = $_GET['id'];
 			$result = $con->query("DELETE FROM `dept_info`where (`dept_no`) = (\"$id\")");
 		}
+
+
 
 		else if($_GET['action']==='delchild'){
 			echo "action";

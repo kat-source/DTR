@@ -43,14 +43,21 @@
                                             <td><?php echo $row['name']; ?></td>
                                             <td><?php echo $row['salary']; ?></td>
                                             <td><?php echo $row['phone']; ?></td>
-                                            <td><?php echo $row['dept_no']; ?></td>
+                                            
+                                            <td><?php 
+                                            $parent = $con->query("SELECT dept_name FROM dept_info where dept_no=(SELECT dept_no from employees where sid=$row[sid])");
+
+                                           while ( $name = $parent->fetch_assoc()) {
+                                              
+                                            //$name=$row['sid'];
+                                            echo $name['dept_name']; }?></td>
                                             
 
                                             <td> <a href="?p=addchildren&id=<?php echo $row['sid']?>" onclick="return confirm('Add offspring info of this employee?');"> <h4><?php echo "Add Offspring"; ?> </h4></a></td>
 
 
 
-                                            <td> <a href="#"> <h4><?php echo "Edit"; ?> </h4></a></td>
+                                            <td> <a href="?p=editemployee&id=<?php echo $row['sid']; ?>"> <h4><?php echo "Edit"; ?> </h4></a></td>
 
 
 
