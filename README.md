@@ -23,7 +23,7 @@ The timelogs of the employees are displayed for the record.
 
 
 
-[] introduce qr code to time in
-[] finish CRUD (Update not yet started)
-[] add time out
-[]
+- [] introduce qr code to time in
+- [] finish CRUD (Update not yet started)
+- [] add time out
+- []
