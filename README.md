@@ -22,7 +22,7 @@ The timelogs of the employees are displayed for the record.
 -To access the project, go to browser and type  localhost/DTR/
 
 
-
+### TO DO LIST
 - [] introduce qr code to time in
 - [] finish CRUD (Update not yet started)
 - [] add time out
