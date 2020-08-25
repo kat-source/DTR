@@ -65,6 +65,15 @@
                                         
                                         </tr>
                                         <?php } ?>
+
+                                         <script type="text/javascript">
+                                            $('#pdf').on('click',function(){
+                                            $("#dataTables-example").tableHTMLExport({type:'pdf',filename:'Time Logs.pdf'});
+                                          })
+                                            $('#csv').on('click',function(){
+                                            $("#dataTables-example").tableHTMLExport({type:'csv',filename:'Time Logs.csv'});
+                                          })
+                                        </script>
                                     </tbody>
                                 </table>
                             </div>
