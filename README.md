@@ -20,3 +20,10 @@ The timelogs of the employees are displayed for the record.
 -as for the database, import the dtr.sql to create the database or run the sql file.
 -Open your server, be sure to start Apache and MySQL.
 -To access the project, go to browser and type  localhost/DTR/
+
+
+
+[] introduce qr code to time in
+[] finish CRUD (Update not yet started)
+[] add time out
+[]
